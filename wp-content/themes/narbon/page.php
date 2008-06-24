@@ -1,0 +1,18 @@
+<?php get_header(); ?>
+
+<div id="left" class="eleven columns" >
+<?php if (have_posts()) : ?>
+<?php while (have_posts()) : the_post(); ?>
+<div class="post" id="post-<?php the_ID(); ?>">
+<div class="title">
+<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="لینک مستقیم به <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+</div>
+<div class="entry">
+<?php the_content('خواندن این نوشته &raquo;'); ?>
+<div class="clear"></div>
+</div>
+</div>
+<?php endwhile; endif; ?>
+</div>		
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
